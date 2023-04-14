@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -54,22 +54,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if emailTextField.isEditing || passwordTextField.isEditing {
-            moveWithKeyboard(on: notification, self.loginButtonBottomConstraint, true, withBottomConstant: 30)
+            moveWithKeyboard(on: notification, move: self.loginButtonBottomConstraint, if: true, by: 30)
         }
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
-        moveWithKeyboard(on: notification, self.loginButtonBottomConstraint, false, withBottomConstant: 30)
+        moveWithKeyboard(on: notification, move: self.loginButtonBottomConstraint, if: false, by: 30)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func onLogin(_ sender: Any) {
+        guard let email = emailTextField.text else { emailTextField.layer.borderColor = ColorEnum.error.cgColor; return }
+        guard let password = passwordTextField.text else { passwordTextField.layer.borderColor = ColorEnum.error.cgColor; return }
+        
+        if !email.isEmpty && !password.isEmpty {
+            EmailAuth(email: emailTextField.text!, password: passwordTextField.text!, providedBy: RealmEmailAuth()).login()
+        } else {
+            if email.isEmpty {
+                emailTextField.layer.borderColor = ColorEnum.error.cgColor
+            }
+            
+            if password.isEmpty {
+                passwordTextField.layer.borderColor = ColorEnum.error.cgColor
+            }
+        }
     }
-    */
-
 }

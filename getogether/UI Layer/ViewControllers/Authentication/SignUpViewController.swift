@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.fullNameTextField.delegate = self
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        
+                
         configureKeyboardNotifications()
     }
     
@@ -58,50 +58,34 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if fullNameTextField.isEditing || emailTextField.isEditing || passwordTextField.isEditing {
-            moveWithKeyboard(on: notification, self.registerButtonBottomConstraint, true, withBottomConstant: 30)
+            moveWithKeyboard(on: notification, move: self.registerButtonBottomConstraint, if: true, by: 30)
         }
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
-        moveWithKeyboard(on: notification, self.registerButtonBottomConstraint, false, withBottomConstant: 30)
+        moveWithKeyboard(on: notification, move: self.registerButtonBottomConstraint, if: false, by: 30)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension UIViewController {
     
-    func moveWithKeyboard(on notification: NSNotification, _ constraint: NSLayoutConstraint, _ keyboardWillShow: Bool, withBottomConstant defaultValue: CGFloat) {
-        guard let userInfo = notification.userInfo else { return }
+    @IBAction func onRegister(_ sender: Any) {
+        guard let fullName = fullNameTextField.text else {  fullNameTextField.layer.borderColor = ColorEnum.error.cgColor; return }
+        guard let email = emailTextField.text else { emailTextField.layer.borderColor = ColorEnum.error.cgColor; return }
+        guard let password = passwordTextField.text else { passwordTextField.layer.borderColor = ColorEnum.error.cgColor; return }
         
-        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        guard let keyboardAnimationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-        guard let keyboardAnimationCurve = UIView.AnimationCurve(rawValue: userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! Int) else { return }
-        
-        let keyboardHeight = keyboardSize.cgRectValue.height
-        
-        if keyboardWillShow {
-            let safeAreaExists = (self.view?.window?.safeAreaInsets.bottom != 0)
-            constraint.constant = keyboardHeight + (safeAreaExists ? 0 : defaultValue)
+        if !email.isEmpty && !password.isEmpty {
+            EmailAuth(email: email, password: password, providedBy: RealmEmailAuth()).login()
         } else {
-            constraint.constant = defaultValue
+            if fullName.isEmpty {
+                fullNameTextField.layer.borderColor = ColorEnum.error.cgColor
+            }
+            
+            if email.isEmpty {
+                emailTextField.layer.borderColor = ColorEnum.error.cgColor
+            }
+            
+            if password.isEmpty {
+                passwordTextField.layer.borderColor = ColorEnum.error.cgColor
+            }
         }
-        
-        let animator = UIViewPropertyAnimator(duration: keyboardAnimationDuration, curve: keyboardAnimationCurve) { [weak self] in
-            // Update Constraints
-            self?.view.layoutIfNeeded()
-        }
-        
-        // Perform the animation
-        animator.startAnimation()
     }
 }
