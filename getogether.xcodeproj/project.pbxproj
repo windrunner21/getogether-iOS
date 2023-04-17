@@ -14,7 +14,7 @@
 		CA39C71B29E454F3004DFB4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA39C71929E454F3004DFB4D /* LaunchScreen.storyboard */; };
 		CA39C72929E6989F004DFB4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39C72829E6989F004DFB4D /* LoginViewController.swift */; };
 		CA39C72B29E6C9B2004DFB4D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39C72A29E6C9B2004DFB4D /* SignUpViewController.swift */; };
-		CA39C72D29E6C9D8004DFB4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39C72C29E6C9D8004DFB4D /* ViewController.swift */; };
+		CA39C72D29E6C9D8004DFB4D /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39C72C29E6C9D8004DFB4D /* AuthenticationViewController.swift */; };
 		CA39C73129E8141C004DFB4D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA39C73029E8141C004DFB4D /* Realm */; };
 		CA39C73329E8141C004DFB4D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA39C73229E8141C004DFB4D /* RealmSwift */; };
 		CA39C73629E82CBE004DFB4D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39C73529E82CBE004DFB4D /* DashboardViewController.swift */; };
@@ -25,6 +25,10 @@
 		CAEB663729E96008004E4F89 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663629E96008004E4F89 /* AuthProvider.swift */; };
 		CAEB663A29E98025004E4F89 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663929E98025004E4F89 /* ColorEnum.swift */; };
 		CAEB663C29E98AE9004E4F89 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663B29E98AE9004E4F89 /* CustomUITextField.swift */; };
+		CAEB663F29ED4E12004E4F89 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663E29ED4E12004E4F89 /* User.swift */; };
+		CAEB664129ED6863004E4F89 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEB664029ED6863004E4F89 /* LoginScreen.storyboard */; };
+		CAEB664329ED686C004E4F89 /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEB664229ED686C004E4F89 /* RegisterScreen.storyboard */; };
+		CAEB664629ED6994004E4F89 /* AuthenticationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEB664529ED6994004E4F89 /* AuthenticationScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +41,7 @@
 		CA39C71C29E454F3004DFB4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA39C72829E6989F004DFB4D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CA39C72A29E6C9B2004DFB4D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		CA39C72C29E6C9D8004DFB4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA39C72C29E6C9D8004DFB4D /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		CA39C73529E82CBE004DFB4D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		CAEB662829E94EA8004E4F89 /* Realm API Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm API Client.swift"; sourceTree = "<group>"; };
 		CAEB662E29E9516F004E4F89 /* RealmEmailAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEmailAuth.swift; sourceTree = "<group>"; };
@@ -46,6 +50,10 @@
 		CAEB663629E96008004E4F89 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		CAEB663929E98025004E4F89 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		CAEB663B29E98AE9004E4F89 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
+		CAEB663E29ED4E12004E4F89 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CAEB664029ED6863004E4F89 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		CAEB664229ED686C004E4F89 /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
+		CAEB664529ED6994004E4F89 /* AuthenticationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 		CA39C72529E68534004DFB4D /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				CAEB663D29ED4E0A004E4F89 /* User */,
 				CAEB662A29E9510A004E4F89 /* Authentication */,
 			);
 			path = "Business Logic Layer";
@@ -131,7 +140,6 @@
 			children = (
 				CA39C73429E82B30004DFB4D /* Dashboard */,
 				CA39C72E29E6C9DD004DFB4D /* Authentication */,
-				CA39C72C29E6C9D8004DFB4D /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 		CA39C72729E69843004DFB4D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CAEB664429ED686F004E4F89 /* Authentication */,
 				CA39C71929E454F3004DFB4D /* LaunchScreen.storyboard */,
 				CA39C71429E454F2004DFB4D /* Main.storyboard */,
 			);
@@ -148,6 +157,7 @@
 		CA39C72E29E6C9DD004DFB4D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				CA39C72C29E6C9D8004DFB4D /* AuthenticationViewController.swift */,
 				CA39C72829E6989F004DFB4D /* LoginViewController.swift */,
 				CA39C72A29E6C9B2004DFB4D /* SignUpViewController.swift */,
 			);
@@ -203,6 +213,24 @@
 				CAEB663B29E98AE9004E4F89 /* CustomUITextField.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CAEB663D29ED4E0A004E4F89 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB663E29ED4E12004E4F89 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CAEB664429ED686F004E4F89 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB664029ED6863004E4F89 /* LoginScreen.storyboard */,
+				CAEB664229ED686C004E4F89 /* RegisterScreen.storyboard */,
+				CAEB664529ED6994004E4F89 /* AuthenticationScreen.storyboard */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +300,10 @@
 			files = (
 				CA39C71B29E454F3004DFB4D /* LaunchScreen.storyboard in Resources */,
 				CA39C71829E454F3004DFB4D /* Assets.xcassets in Resources */,
+				CAEB664629ED6994004E4F89 /* AuthenticationScreen.storyboard in Resources */,
+				CAEB664129ED6863004E4F89 /* LoginScreen.storyboard in Resources */,
 				CA39C71629E454F2004DFB4D /* Main.storyboard in Resources */,
+				CAEB664329ED686C004E4F89 /* RegisterScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAEB662929E94EA8004E4F89 /* Realm API Client.swift in Sources */,
-				CA39C72D29E6C9D8004DFB4D /* ViewController.swift in Sources */,
+				CA39C72D29E6C9D8004DFB4D /* AuthenticationViewController.swift in Sources */,
 				CA39C73629E82CBE004DFB4D /* DashboardViewController.swift in Sources */,
 				CAEB663529E95283004E4F89 /* EmailAuth.swift in Sources */,
 				CAEB663C29E98AE9004E4F89 /* CustomUITextField.swift in Sources */,
 				CAEB663329E951EE004E4F89 /* Authentication.swift in Sources */,
+				CAEB663F29ED4E12004E4F89 /* User.swift in Sources */,
 				CA39C72929E6989F004DFB4D /* LoginViewController.swift in Sources */,
 				CA39C70F29E454F2004DFB4D /* AppDelegate.swift in Sources */,
 				CAEB662F29E9516F004E4F89 /* RealmEmailAuth.swift in Sources */,

@@ -72,8 +72,14 @@ class SignUpViewController: UIViewController {
         guard let email = emailTextField.text else { emailTextField.layer.borderColor = ColorEnum.error.cgColor; return }
         guard let password = passwordTextField.text else { passwordTextField.layer.borderColor = ColorEnum.error.cgColor; return }
         
+        let authenticationProvider: AuthProvider = RealmEmailAuth()
+        let emailAuth: EmailAuth = EmailAuth(email: email, password: password, provider: authenticationProvider)
+        
         if !email.isEmpty && !password.isEmpty {
-            EmailAuth(email: email, password: password, providedBy: RealmEmailAuth()).login()
+//            setLoading(true)
+            let user = emailAuth.register()
+            print(user.getId() ?? "Fail")
+//            setLoading(false)
         } else {
             if fullName.isEmpty {
                 fullNameTextField.layer.borderColor = ColorEnum.error.cgColor
@@ -86,6 +92,14 @@ class SignUpViewController: UIViewController {
             if password.isEmpty {
                 passwordTextField.layer.borderColor = ColorEnum.error.cgColor
             }
+        }
+    }
+    
+    private func setLoading(_ loading: Bool) {
+        if loading {
+            registerButton.configuration?.showsActivityIndicator = true
+        } else {
+            registerButton.configuration?.showsActivityIndicator = false
         }
     }
 }

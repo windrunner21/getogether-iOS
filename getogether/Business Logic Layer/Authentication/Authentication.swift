@@ -6,9 +6,6 @@
 //
 
 protocol Authentication {
-    var provider: AuthProvider { get set }
-    
-    func login()
-    
-    func register()
+    func login() -> User
+    func register() -> User
 }

@@ -65,17 +65,31 @@ class LoginViewController: UIViewController {
     @IBAction func onLogin(_ sender: Any) {
         guard let email = emailTextField.text else { emailTextField.layer.borderColor = ColorEnum.error.cgColor; return }
         guard let password = passwordTextField.text else { passwordTextField.layer.borderColor = ColorEnum.error.cgColor; return }
-        
+
+        let authenticationProvider: AuthProvider = RealmEmailAuth()
+        let emailAuth: EmailAuth = EmailAuth(email: email, password: password, provider: authenticationProvider)
+
         if !email.isEmpty && !password.isEmpty {
-            EmailAuth(email: emailTextField.text!, password: passwordTextField.text!, providedBy: RealmEmailAuth()).login()
+//            setLoading(true)
+            let user = emailAuth.login()
+            print(user.getId() ?? "Failed")
+//            setLoading(false)
         } else {
             if email.isEmpty {
                 emailTextField.layer.borderColor = ColorEnum.error.cgColor
             }
-            
+
             if password.isEmpty {
                 passwordTextField.layer.borderColor = ColorEnum.error.cgColor
             }
+        }
+    }
+    
+    private func setLoading(_ loading: Bool) {
+        if loading {
+            loginButton.configuration?.showsActivityIndicator = true
+        } else {
+            loginButton.configuration?.showsActivityIndicator = false
         }
     }
 }

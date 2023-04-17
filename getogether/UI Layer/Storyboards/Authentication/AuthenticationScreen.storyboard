@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authentication View Controller-->
+        <scene sceneID="G2e-rY-SBs">
+            <objects>
+                <viewController storyboardIdentifier="AuthenticationScreen" id="il5-MD-7cJ" customClass="AuthenticationViewController" customModule="getogether" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wTm-hI-tBx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cpU-kj-5B9">
+                                <rect key="frame" x="30" y="494" width="260" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQk-uo-Fod">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Login">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <directionalEdgeInsets key="contentInsets" top="10" leading="0.0" bottom="10" trailing="0.0"/>
+                                            <color key="baseBackgroundColor" name="Secondary"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onLogin:" destination="il5-MD-7cJ" eventType="touchUpInside" id="4Nv-Ty-IwT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-pO-Ias">
+                                        <rect key="frame" x="140" y="0.0" width="120" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <directionalEdgeInsets key="contentInsets" top="10" leading="0.0" bottom="10" trailing="0.0"/>
+                                            <color key="baseBackgroundColor" name="Secondary"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onSignUp:" destination="il5-MD-7cJ" eventType="touchUpInside" id="Uyj-1c-Tmi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to GeTogether!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-gh-ELo">
+                                <rect key="frame" x="30" y="60" width="260" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qk6-MD-uaG"/>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jtY-gh-ELo" secondAttribute="trailing" constant="30" id="8Hf-k1-1Lp"/>
+                            <constraint firstItem="qk6-MD-uaG" firstAttribute="trailing" secondItem="cpU-kj-5B9" secondAttribute="trailing" constant="30" id="DPa-jZ-AAg"/>
+                            <constraint firstItem="jtY-gh-ELo" firstAttribute="top" secondItem="qk6-MD-uaG" secondAttribute="top" constant="40" id="Kkz-Cg-Rs1"/>
+                            <constraint firstItem="jtY-gh-ELo" firstAttribute="leading" secondItem="qk6-MD-uaG" secondAttribute="leading" constant="30" id="NzU-hC-f6d"/>
+                            <constraint firstItem="cpU-kj-5B9" firstAttribute="leading" secondItem="qk6-MD-uaG" secondAttribute="leading" constant="30" id="Tg4-0p-mFP"/>
+                            <constraint firstItem="qk6-MD-uaG" firstAttribute="bottom" secondItem="cpU-kj-5B9" secondAttribute="bottom" constant="30" id="qTe-EL-8Ce"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="OQk-uo-Fod" id="He2-Z8-pJh"/>
+                        <outlet property="signupButton" destination="HOL-pO-Ias" id="fhp-zw-8hu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCL-U5-Ed9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="-42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Primary">
+            <color red="1" green="0.43137254901960786" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.14100000262260437" green="0.21600000560283661" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

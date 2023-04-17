@@ -7,15 +7,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AuthenticationViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view
     }
     
-
+    @IBAction func onLogin(_ sender: Any) {
+        let loginStoryboard: UIStoryboard = UIStoryboard(name: "LoginScreen", bundle: .main)
+        let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginScreen")
+        self.present(loginViewController, animated: true)
+    }
+    
+    @IBAction func onSignUp(_ sender: Any) {
+        let signUpStoryboard: UIStoryboard = UIStoryboard(name: "RegisterScreen", bundle: .main)
+        let signUpViewController = signUpStoryboard.instantiateViewController(withIdentifier: "RegisterScreen")
+        self.present(signUpViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -28,7 +42,6 @@ class ViewController: UIViewController {
     
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
     }
-
 }
 
 extension UIViewController: UITextFieldDelegate {
