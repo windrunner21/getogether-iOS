@@ -64,6 +64,7 @@
 		CAEB665129EE6CDD004E4F89 /* EmailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailProvider.swift; sourceTree = "<group>"; };
 		CAEB665329EE6D54004E4F89 /* EmailProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailProviderExtension.swift; sourceTree = "<group>"; };
 		CAEB665629EE6E3E004E4F89 /* RealmEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEmailService.swift; sourceTree = "<group>"; };
+		CAEB665829EEBD7C004E4F89 /* getogether.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = getogether.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		CA39C70D29E454F2004DFB4D /* getogether */ = {
 			isa = PBXGroup;
 			children = (
+				CAEB665829EEBD7C004E4F89 /* getogether.entitlements */,
 				CA39C72529E68534004DFB4D /* Business Logic Layer */,
 				CA39C72429E68528004DFB4D /* UI Layer */,
 				CA39C72329E68520004DFB4D /* Service Layer */,
@@ -524,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = getogether/getogether.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9258H7N9X2;
@@ -557,6 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = getogether/getogether.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9258H7N9X2;

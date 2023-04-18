@@ -77,12 +77,15 @@ class LoginViewController: UIViewController {
                     switch result {
                     case .failure(let error):
                         print("Login failed: \(error.localizedDescription)")
+                        self?.setLoading(false)
                     case .success(let user):
                         print("Successfully logged in as user: \(user.getId()!)")
                         print(user.isUserLoggedIn())
+                        self?.setLoading(false)
+                        
+                        let dashboardController = DashboardViewController()
+                        self?.navigationController?.setViewControllers([dashboardController], animated: true)
                     }
-                    
-                    self?.setLoading(false)
                 }
             }
         } else {
