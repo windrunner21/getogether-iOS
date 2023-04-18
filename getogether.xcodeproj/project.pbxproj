@@ -21,14 +21,19 @@
 		CAEB662929E94EA8004E4F89 /* Realm API Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB662829E94EA8004E4F89 /* Realm API Client.swift */; };
 		CAEB662F29E9516F004E4F89 /* RealmEmailAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB662E29E9516F004E4F89 /* RealmEmailAuth.swift */; };
 		CAEB663329E951EE004E4F89 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663229E951EE004E4F89 /* Authentication.swift */; };
-		CAEB663529E95283004E4F89 /* EmailAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663429E95283004E4F89 /* EmailAuth.swift */; };
-		CAEB663729E96008004E4F89 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663629E96008004E4F89 /* AuthProvider.swift */; };
+		CAEB663529E95283004E4F89 /* EmailAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663429E95283004E4F89 /* EmailAuthentication.swift */; };
+		CAEB663729E96008004E4F89 /* EmailAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663629E96008004E4F89 /* EmailAuthenticationProvider.swift */; };
 		CAEB663A29E98025004E4F89 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663929E98025004E4F89 /* ColorEnum.swift */; };
 		CAEB663C29E98AE9004E4F89 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663B29E98AE9004E4F89 /* CustomUITextField.swift */; };
 		CAEB663F29ED4E12004E4F89 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB663E29ED4E12004E4F89 /* User.swift */; };
 		CAEB664129ED6863004E4F89 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEB664029ED6863004E4F89 /* LoginScreen.storyboard */; };
 		CAEB664329ED686C004E4F89 /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEB664229ED686C004E4F89 /* RegisterScreen.storyboard */; };
 		CAEB664629ED6994004E4F89 /* AuthenticationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEB664529ED6994004E4F89 /* AuthenticationScreen.storyboard */; };
+		CAEB664929EE6712004E4F89 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB664829EE6712004E4F89 /* ViewControllerExtension.swift */; };
+		CAEB664B29EE6763004E4F89 /* ColorEnumExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB664A29EE6763004E4F89 /* ColorEnumExtension.swift */; };
+		CAEB665229EE6CDD004E4F89 /* EmailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB665129EE6CDD004E4F89 /* EmailProvider.swift */; };
+		CAEB665429EE6D54004E4F89 /* EmailProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB665329EE6D54004E4F89 /* EmailProviderExtension.swift */; };
+		CAEB665729EE6E3E004E4F89 /* RealmEmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB665629EE6E3E004E4F89 /* RealmEmailService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,14 +51,19 @@
 		CAEB662829E94EA8004E4F89 /* Realm API Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm API Client.swift"; sourceTree = "<group>"; };
 		CAEB662E29E9516F004E4F89 /* RealmEmailAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEmailAuth.swift; sourceTree = "<group>"; };
 		CAEB663229E951EE004E4F89 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		CAEB663429E95283004E4F89 /* EmailAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuth.swift; sourceTree = "<group>"; };
-		CAEB663629E96008004E4F89 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		CAEB663429E95283004E4F89 /* EmailAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthentication.swift; sourceTree = "<group>"; };
+		CAEB663629E96008004E4F89 /* EmailAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationProvider.swift; sourceTree = "<group>"; };
 		CAEB663929E98025004E4F89 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		CAEB663B29E98AE9004E4F89 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		CAEB663E29ED4E12004E4F89 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CAEB664029ED6863004E4F89 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		CAEB664229ED686C004E4F89 /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
 		CAEB664529ED6994004E4F89 /* AuthenticationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationScreen.storyboard; sourceTree = "<group>"; };
+		CAEB664829EE6712004E4F89 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		CAEB664A29EE6763004E4F89 /* ColorEnumExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnumExtension.swift; sourceTree = "<group>"; };
+		CAEB665129EE6CDD004E4F89 /* EmailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailProvider.swift; sourceTree = "<group>"; };
+		CAEB665329EE6D54004E4F89 /* EmailProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailProviderExtension.swift; sourceTree = "<group>"; };
+		CAEB665629EE6E3E004E4F89 /* RealmEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEmailService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 		CA39C72429E68528004DFB4D /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
+				CAEB664729EE6700004E4F89 /* Extensions */,
 				CAEB663829E98000004E4F89 /* Utils */,
 				CA39C72729E69843004DFB4D /* Storyboards */,
 				CA39C72629E6983B004DFB4D /* ViewControllers */,
@@ -129,6 +140,8 @@
 		CA39C72529E68534004DFB4D /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				CAEB665029EE6CBE004E4F89 /* Email */,
+				CAEB664C29EE6793004E4F89 /* Extensions */,
 				CAEB663D29ED4E0A004E4F89 /* User */,
 				CAEB662A29E9510A004E4F89 /* Authentication */,
 			);
@@ -183,9 +196,9 @@
 		CAEB662A29E9510A004E4F89 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				CAEB663629E96008004E4F89 /* AuthProvider.swift */,
 				CAEB663229E951EE004E4F89 /* Authentication.swift */,
-				CAEB663429E95283004E4F89 /* EmailAuth.swift */,
+				CAEB663629E96008004E4F89 /* EmailAuthenticationProvider.swift */,
+				CAEB663429E95283004E4F89 /* EmailAuthentication.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -193,6 +206,7 @@
 		CAEB662B29E95120004E4F89 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CAEB665529EE6E2C004E4F89 /* Email */,
 				CAEB662C29E95131004E4F89 /* Authentication */,
 			);
 			path = Services;
@@ -231,6 +245,39 @@
 				CAEB664529ED6994004E4F89 /* AuthenticationScreen.storyboard */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CAEB664729EE6700004E4F89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB664829EE6712004E4F89 /* ViewControllerExtension.swift */,
+				CAEB664A29EE6763004E4F89 /* ColorEnumExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CAEB664C29EE6793004E4F89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB665329EE6D54004E4F89 /* EmailProviderExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CAEB665029EE6CBE004E4F89 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB665129EE6CDD004E4F89 /* EmailProvider.swift */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		CAEB665529EE6E2C004E4F89 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB665629EE6E3E004E4F89 /* RealmEmailService.swift */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,17 +364,22 @@
 				CAEB662929E94EA8004E4F89 /* Realm API Client.swift in Sources */,
 				CA39C72D29E6C9D8004DFB4D /* AuthenticationViewController.swift in Sources */,
 				CA39C73629E82CBE004DFB4D /* DashboardViewController.swift in Sources */,
-				CAEB663529E95283004E4F89 /* EmailAuth.swift in Sources */,
+				CAEB665229EE6CDD004E4F89 /* EmailProvider.swift in Sources */,
+				CAEB663529E95283004E4F89 /* EmailAuthentication.swift in Sources */,
+				CAEB664B29EE6763004E4F89 /* ColorEnumExtension.swift in Sources */,
 				CAEB663C29E98AE9004E4F89 /* CustomUITextField.swift in Sources */,
 				CAEB663329E951EE004E4F89 /* Authentication.swift in Sources */,
 				CAEB663F29ED4E12004E4F89 /* User.swift in Sources */,
 				CA39C72929E6989F004DFB4D /* LoginViewController.swift in Sources */,
+				CAEB664929EE6712004E4F89 /* ViewControllerExtension.swift in Sources */,
 				CA39C70F29E454F2004DFB4D /* AppDelegate.swift in Sources */,
+				CAEB665729EE6E3E004E4F89 /* RealmEmailService.swift in Sources */,
 				CAEB662F29E9516F004E4F89 /* RealmEmailAuth.swift in Sources */,
 				CA39C72B29E6C9B2004DFB4D /* SignUpViewController.swift in Sources */,
+				CAEB665429EE6D54004E4F89 /* EmailProviderExtension.swift in Sources */,
 				CA39C71129E454F2004DFB4D /* SceneDelegate.swift in Sources */,
 				CAEB663A29E98025004E4F89 /* ColorEnum.swift in Sources */,
-				CAEB663729E96008004E4F89 /* AuthProvider.swift in Sources */,
+				CAEB663729E96008004E4F89 /* EmailAuthenticationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

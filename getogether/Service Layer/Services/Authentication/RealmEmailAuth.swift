@@ -8,35 +8,74 @@
 import RealmSwift
 import Realm
 
-class RealmEmailAuth: AuthProvider {
+class RealmEmailAuth: EmailAuthenticationProvider {
     internal var user: User = User()
-    private let apiClient = RealmAPIClient().getApp()
     
-    func loginWithEmailPassword(email: String, password: String) {
+    private let app = RealmAPIClient().getApp()
+    private let client = RealmAPIClient().getApp().emailPasswordAuth
+    
+    private var email: String
+    private var password: String
+    
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+    }
+    
+    func login() {
         let credentials = Credentials.emailPassword(email: email, password: password)
         
-        apiClient.login(credentials: credentials) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .failure(let error):
-                    print("Login failed: \(error.localizedDescription)")
-                case .success(let user):
-                    print("Successfully logged in as user: \(user.id)")
-                    self?.setUser(user)
-                    print(self?.user.isUserLoggedIn())
-                }
+        app.login(credentials: credentials) { (result) in
+            switch result {
+            case .failure(let error):
+                print("Realm: login failed: \(error.localizedDescription)")
+            case .success(let realmUser):
+                print("Realm: successfully logged in as user: \(realmUser.id)")
+                self.setUser(realmUser)
             }
         }
     }
     
-    func registerWithEmailPassword(email: String, password: String) {
-        apiClient.emailPasswordAuth.registerUser(email: email, password: password) { (error) in
+    func login(completion: @escaping (Result<User, Error>) -> Void) {
+        let credentials = Credentials.emailPassword(email: email, password: password)
+        
+        app.login(credentials: credentials) { (result) in
+            let refactoredResult: Result<User, Error> = result.map { realmUser in
+                let user = User()
+                user.setId(realmUser.id)
+                user.setLoggedIn(realmUser.isLoggedIn)
+                return user
+            }.mapError { error in
+                return error
+            }
+            
+            completion(refactoredResult)
+        }
+    }
+    
+    func register(completion: @escaping (Result<User, Error>) -> Void) {
+        client.registerUser(email: email, password: password) { (error) in
+            
+            if error != nil {
+                print("Realm: failed to register: \(error!.localizedDescription)")
+                let result: Result<User, Error> = .failure(error!)
+                completion(result)
+            } else {
+                print("Realm: successfully registered user.")
+                self.login(completion: completion)
+            }
+        }
+    }
+    
+    func register() {
+        client.registerUser(email: email, password: password) { (error) in
             guard error == nil else {
-                print("Register failed: \(error!.localizedDescription)")
+                print("Realm: failed to register: \(error!.localizedDescription)")
                 return
             }
             
-            print("Successfully registered user.")
+            print("Realm: successfully registered user.")
+            self.login()
         }
     }
 

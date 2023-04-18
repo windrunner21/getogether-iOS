@@ -72,14 +72,26 @@ class SignUpViewController: UIViewController {
         guard let email = emailTextField.text else { emailTextField.layer.borderColor = ColorEnum.error.cgColor; return }
         guard let password = passwordTextField.text else { passwordTextField.layer.borderColor = ColorEnum.error.cgColor; return }
         
-        let authenticationProvider: AuthProvider = RealmEmailAuth()
-        let emailAuth: EmailAuth = EmailAuth(email: email, password: password, provider: authenticationProvider)
+        let emailAuthenticationProvider: EmailAuthenticationProvider = RealmEmailAuth(email: email, password: password)
+        let emailAuthentication: EmailAuthentication = EmailAuthentication(provider: emailAuthenticationProvider)
         
         if !email.isEmpty && !password.isEmpty {
-//            setLoading(true)
-            let user = emailAuth.register()
-            print(user.getId() ?? "Fail")
-//            setLoading(false)
+            setLoading(true)
+            
+            emailAuthentication.register { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let error):
+                        print("Failed to register: \(error.localizedDescription)")
+                    case .success(let user):
+                        print("Successfully logged in as user: \(user.getId()!)")
+                        print(user.isUserLoggedIn())
+                    }
+                    
+                    self?.setLoading(false)
+                }
+            }
+
         } else {
             if fullName.isEmpty {
                 fullNameTextField.layer.borderColor = ColorEnum.error.cgColor
