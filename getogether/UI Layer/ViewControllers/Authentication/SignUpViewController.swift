@@ -89,6 +89,10 @@ class SignUpViewController: UIViewController {
                     }
                     
                     self?.setLoading(false)
+                    
+                    let dashboardStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: .main)
+                    let dashboardController = dashboardStoryboard.instantiateViewController(identifier: "DashboardScreen")
+                    self?.view.window?.rootViewController = dashboardController
                 }
             }
 

@@ -83,8 +83,9 @@ class LoginViewController: UIViewController {
                         print(user.isUserLoggedIn())
                         self?.setLoading(false)
                         
-                        let dashboardController = DashboardViewController()
-                        self?.navigationController?.setViewControllers([dashboardController], animated: true)
+                        let dashboardStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: .main)
+                        let dashboardController = dashboardStoryboard.instantiateViewController(identifier: "DashboardScreen")
+                        self?.view.window?.rootViewController = dashboardController
                     }
                 }
             }
